@@ -3,23 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversor de Archivos</title>
-    <link rel="stylesheet" href="style.css"> <!-- Referencia al archivo CSS -->
+    <title>Conversor de Unidades</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Convertir Imagen</h1>
-        <form id="upload-form">
-            <input type="file" id="file-input" accept="image/*" required>
-            <button type="submit">Subir y Convertir</button>
-        </form>
+        <h1>Conversor de Unidades</h1>
 
-        <h2>Imagen Convertida:</h2>
-        <img id="converted-image" src="" alt="Imagen convertida">
+        <div class="form-group">
+            <label for="categoria">Selecciona la categoría:</label>
+            <select id="categoria" onchange="actualizarUnidades()">
+                <option value="longitud">Longitud</option>
+                <option value="masa">Masa</option>
+                <option value="temperatura">Temperatura</option>
+                <option value="volumen">Volumen</option>
+                <option value="velocidad">Velocidad</option>
+                <option value="area">Área</option>
+                <option value="energia">Energía</option>
+                <option value="presion">Presión</option>
+                <option value="tiempo">Tiempo</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="unidadDesde">Selecciona la unidad de medida inicial:</label>
+            <select id="unidadDesde">
+                <!-- Las opciones se llenarán dinámicamente con JavaScript -->
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="cantidad">Cantidad a convertir:</label>
+            <input type="number" id="cantidad" placeholder="Ingresa cantidad">
+        </div>
+
+        <div class="form-group">
+            <label for="unidadHasta">Selecciona la unidad a la que convertir:</label>
+            <select id="unidadHasta">
+                <!-- Las opciones se llenarán dinámicamente con JavaScript -->
+            </select>
+        </div>
+
+        <button onclick="convertir()">Convertir</button>
+
+        <div id="resultado"></div>
     </div>
 
-    <!-- Referencia al archivo JavaScript externo -->
-    <script src="static/js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
+
 
